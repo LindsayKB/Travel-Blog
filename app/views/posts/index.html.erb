@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+<div class="home-hero"><div class="child"><div class="welcome">WELCOME</div></div></div>
+<section class="blog">
+<span class="blog-title">Blog</span>
+<% @posts.each do |post| %>
+	<div class="blog-post-card">
+	  <div class="blog-child">
+		<h2><%= post.title %></h2>
+		<p><%= truncate(post.body, :length => 300) %></p>
+		<%= link_to "Read More", post_path(post), :class => 'btn btn-default' %>
+	  </div>
+	</div>
+<% end %>
+</section>
